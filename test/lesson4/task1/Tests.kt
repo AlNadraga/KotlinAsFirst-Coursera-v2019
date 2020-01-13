@@ -159,6 +159,23 @@ class Tests {
         assertTrue(toMutate === accumulate(toMutate)) { "You should mutate an input list, not create a copy" }
     }
 
+//    @Test
+//    fun isSimple(){
+//        assertEquals(true, isSimple(2))
+//        assertEquals(true, isSimple(3))
+//        assertEquals(true, isSimple(19))
+//        assertEquals(true, isSimple(17))
+//        assertEquals(true, isSimple(31))
+//        assertEquals(true, isSimple(37))
+//        assertEquals(true, isSimple(71))
+//        assertEquals(true, isSimple(283))
+//        assertEquals(true, isSimple(563))
+//        assertEquals(false, isSimple(102))
+//        assertEquals(false, isSimple(125))
+//        assertEquals(false, isSimple(24))
+//        assertEquals(false, isSimple(16))
+//    }
+
     @Test
     @Tag("Normal")
     fun factorize() {
@@ -185,6 +202,7 @@ class Tests {
         assertEquals(listOf(1, 2, 1, 0), convert(100, 4))
         assertEquals(listOf(1, 3, 12), convert(250, 14))
         assertEquals(listOf(2, 14, 12), convert(1000, 19))
+        assertEquals(listOf(1,0,1,1,0,0,0,0,0,1,1,1,0,1,1,1), convert(45175,2))
     }
 
     @Test
@@ -216,6 +234,14 @@ class Tests {
         assertEquals(1000, decimalFromString("2ec", 19))
         assertEquals(35, decimalFromString("z", 36))
         assertEquals(Int.MAX_VALUE, decimalFromString("a02220281", 11))
+    }
+
+    @Test
+    fun numToList() {
+        assertEquals(listOf(1,2,3,4,5,6), numToList(123456))
+        assertEquals(listOf(1,4,2,1,2,5), numToList(142125))
+        assertEquals(listOf(1), numToList(1))
+        assertEquals(listOf(2), numToList(2))
     }
 
     @Test

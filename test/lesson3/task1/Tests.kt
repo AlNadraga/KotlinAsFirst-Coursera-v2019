@@ -70,6 +70,7 @@ class Tests {
         assertEquals(2, digitNumber(10))
         assertEquals(2, digitNumber(99))
         assertEquals(3, digitNumber(123))
+        assertEquals(2,digitNumber(-11))
         assertEquals(10, digitNumber(Int.MAX_VALUE))
     }
 
@@ -185,6 +186,8 @@ class Tests {
     @Test
     @Tag("Normal")
     fun cos() {
+//        assertEquals(0.70710678118, cos(PI/4, 1e-5))
+        assertEquals(1.0, cos(6.0 * PI, 1e-10))
         assertEquals(1.0, cos(0.0, 1e-5), 1e-5)
         assertEquals(0.0, cos(PI / 2.0, 1e-5), 1e-5)
         assertEquals(-1.0, cos(PI, 1e-5), 1e-5)
@@ -212,6 +215,7 @@ class Tests {
         assertFalse(isPalindrome(3653))
         assertTrue(isPalindrome(15751))
         assertTrue(isPalindrome(24688642))
+        assertTrue(isPalindrome(2107447012))
     }
 
     @Test
@@ -245,5 +249,6 @@ class Tests {
         assertEquals(2, fibSequenceDigit(9))
         assertEquals(5, fibSequenceDigit(14))
         assertEquals(2, fibSequenceDigit(20))
+        assertEquals(3, fibSequenceDigit(227))
     }
 }

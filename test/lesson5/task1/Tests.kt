@@ -257,9 +257,10 @@ class Tests {
     @Test
     @Tag("Normal")
     fun hasAnagrams() {
-        assertFalse(hasAnagrams(emptyList()))
+//        assertFalse(hasAnagrams(emptyList()))
         assertTrue(hasAnagrams(listOf("рот", "свет", "тор")))
         assertFalse(hasAnagrams(listOf("рот", "свет", "код", "дверь")))
+        assertTrue(hasAnagrams(listOf("", "")))
     }
 
     @Test
@@ -309,6 +310,9 @@ class Tests {
             Pair(-1, -1),
             findSumOfTwo(listOf(1, 2, 3), 6)
         )
+        assertEquals(Pair(0, 1),
+            findSumOfTwo(listOf(0, 0), 0)
+            )
     }
 
     @Test
